@@ -24,7 +24,8 @@ public class LoginActivity extends AppCompatActivity
 	StringRequest request;
 	RequestQueue queue;
 
-	String url = "http://starlord.hackerearth.com/studio";
+	String url = "http://clangl.000webhostapp.com/GDP/demo.php?";
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -51,7 +52,9 @@ public class LoginActivity extends AppCompatActivity
 
 	public void auth(String emailEntered, String passwordEntered)
 	{
-		request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>()
+
+		String final_url=url+"username="+emailEntered+"&password="+passwordEntered;
+		request = new StringRequest(Request.Method.GET, final_url, new Response.Listener<String>()
 		{
 			@Override
 			public void onResponse(String response)
